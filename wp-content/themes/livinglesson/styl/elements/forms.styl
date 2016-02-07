@@ -1,0 +1,113 @@
+$default-form-inputs
+    padding em($input-padding)
+    color $chestnut
+    border 1px solid $light-blue-3
+    border-radius 2px
+    max-width 100%
+
+    &:focus
+        box-shadow 0 0 3px 1px $cyan
+
+    &:disabled
+        background none
+        box-shadow none
+        border-radius none
+        color $blue-3
+
+/************************
+*******  $FORMS  ********
+************************/
+.default-form
+    input:not([type="submit"]),
+    textarea
+        font 1em $font-regular-val
+
+        placeholder()
+
+    input:not([type]),
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    input[type="password"],
+    input[type="month"],
+    input[type="url"],
+    input[type="tel"],
+    textarea,
+    select
+        @extends $default-form-inputs
+
+    input.reset,
+    textarea.reset
+        padding 0
+        border none
+        margin 0
+        box-shadow none
+
+        &:focus
+            box-shadow none
+
+    input[type="checkbox"],
+    input[type="radio"]
+        width em($default-checkbox-size)
+        height em($default-checkbox-size)
+
+    input[type="checkbox"],
+    .checkbox
+        border-radius 2px
+
+    input[type="radio"],
+    .radio
+        border-radius 50%
+
+    input[type="submit"]
+        cursor pointer
+
+    .form-messages
+        margin-top .35em
+
+    // Good for !Error messages
+    .form-error,
+    .form-update
+        margin-top .5em
+        font-style italic
+        color $red
+
+    .form-update
+        color $green
+
+    ///////// !STYLED  ///////////
+    &.styled,
+    .styled
+        input[type="checkbox"],
+        input[type="radio"]
+            display none
+
+        .checkbox,
+        .radio
+            border 1px solid $chestnut !important
+            display inline-block
+            width em(14)
+            height em(14)
+            vertical-align middle
+            background $white
+
+            .no-touch &:hover
+                box-shadow inset 0 0 2px 1px rgba($red, .5)
+
+            &:active,
+            .no-touch &:active
+                box-shadow inset 0 0 2px 1px rgba($red, .75)
+
+        :checked + .checkbox,
+        :checked + .radio
+            @extends _red-gradient
+
+        :disabled + .checkbox,
+        :disabled + .radio
+            opacity .5
+            box-shadow none !important
+        
+        .checkbox + .text,
+        .radio + .text
+            margin-left em(5)
+            vertical-align middle

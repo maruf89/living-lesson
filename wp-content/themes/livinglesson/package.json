@@ -1,0 +1,23 @@
+{
+  "name": "livinglesson",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "Gruntfile": "Gruntfile.js",
+  "scripts": {
+    "test": "grunt"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-concat": "~0.2.0",
+    "grunt-contrib-stylus": "^1.0.0",
+    "grunt-contrib-uglify": "~0.2.0",
+    "grunt-contrib-watch": "~0.3.1",
+    "matchdep": "~0.1.1",
+    "path": "~0.4.9"
+  },
+  "dependencies": {
+    "grunt-contrib-stylus": "^1.0.0"
+  }
+}

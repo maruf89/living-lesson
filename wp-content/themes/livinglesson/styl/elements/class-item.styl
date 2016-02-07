@@ -1,0 +1,94 @@
+.class-item
+    height em(200)
+    text-align center
+    text-decoration none
+    box-sizing border-box
+    
+    .item-wrapper
+        border 1px solid $maroon
+        height 100%
+        position relative
+    
+    .spots-left
+        $side-curl-size = 5
+        position absolute
+        top em(20)
+        left - em($side-curl-size)
+        
+        &:before
+            left 1px
+            top - em($side-curl-size * .6)
+            background $maroon
+            transform rotate(45deg)
+            z-index -1
+        
+    .spots-left:before,
+    .spots-bar:before,
+    .spots-bar:after
+        content ' '
+        position absolute
+        width 0
+        height 0
+        border solid transparent
+        pointer-events none
+        
+    .spots-bar
+        $height = 32
+        $tail-size = $height / 2
+        display block
+        background $red
+        width em(125)
+        color $white
+        $font-bold(14, null, $height)
+        
+        &:before,
+        &:after
+            right - em($tail-size)
+            border-width em($tail-size)
+            
+        &:before
+            top 0
+            border-top-color $red
+            
+        &:after
+            bottom 0
+            border-bottom-color $red
+    
+    .background
+        background-size cover
+        absolute top left
+        width 100%
+        height 100%
+        
+    .bg-overlay:before
+        content ''
+        background $tan
+        opacity .3
+        absolute top left
+        width 100%
+        height 100%
+        transition opacity 150ms ease-in
+        
+    &:hover,
+    &:active
+        .bg-overlay:before
+            opacity .8
+            
+    .class-content
+        position relative
+        padding-top em(60)
+            
+    /*h4*/.item-title
+        color $white
+        $font-bold(30, null, 45)
+        text-shadow 0 0 2px $chestnut
+
+    .class-stats
+        color $chestnut
+        $font-regular(18, null, 30)
+        
+        strong
+            $font-bold(20, 18, 30)
+            
+        em
+            $font-italic(18, 18, 30)

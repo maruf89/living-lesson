@@ -1,0 +1,42 @@
+/************************/
+/*****    !COLORS   *****/
+/************************/
+$white = #fff
+$black = #000
+$red = #F42C2C
+$maroon = #C20A26
+$brown-desat = #60544C
+$chestnut = #423327
+$brown-light = #9B5E2C
+$tan = #F8D990
+$orange = #E38A36
+
+/************************/
+/***** !SOCIAL MEDIA ****/
+/************************/
+$fb-blue = #3B5999
+$fb-blue-hover = lighten($fb-blue, 20%)
+$google-red = #dd4b39
+$google-red-hover = lighten($google-red, 10%)
+$linkedin-blue = #007bb6
+$linkedin-blue-hover = lighten($linkedin-blue, 10%)
+$twitter-blue = #33CCFF
+$twitter-blue-hover = lighten($twitter-blue, 20%)
+
+$fb-blue-dark = #4D68A1
+$google-red-dark = #DD4D3B
+$twitter-blue-dark = #5EA9DD
+$linkedin-blue-dark = #0177B0
+
+
+/************************/
+/*****  !GRADIENTS   ****/
+/************************/
+_red-gradient
+    background $red
+    background linear-gradient(-180deg, $red 0%, $maroon 100%)
+
+_red-gradient-hover
+    background darken($red, 30%)
+    background linear-gradient(-180deg, darken($red, 30%) 0%, darken($maroon, 25%) 100%)
+

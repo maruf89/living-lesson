@@ -1,0 +1,134 @@
+_fluffy
+    margin .5em
+    padding 10px 1em
+    
+a[class*='btn-']
+    box-sizing border-box
+
+/************************
+*****  $BUTTONS  ********
+************************/
+[class^='btn-'],
+[class*='btn-'],
+.button-styles
+    display inline-block
+    $font-bold($button-font-size)
+    text-align center
+    color $white
+    cursor pointer
+    border-radius 2px
+    vertical-align middle
+    box-shadow -1px 1px 3px .05px rgba($chestnut, .5)
+
+    &.spaced,
+    .spaced &
+        margin .5em
+
+    &.fat,
+    .fat &
+        padding em(12) 1em
+
+    &.fluffy,
+    .fluffy &
+        @extends _fluffy
+
+    &.plump,
+    .plump &
+        margin .5em
+        padding em(12) 2em
+
+    &:first-child
+        margin-left 0
+
+    &:last-child
+        margin-right 0
+
+    &.thin
+        padding em(12)
+
+    .text
+        display inline-block
+        vertical-align middle
+
+    &:before
+        @extends [class^="icon-"]:before
+
+    // &:active:not(:disabled):not(.disabled):not(.unstyled),
+    // .no-touch &:active:not(:disabled):not(.disabled):not(.unstyled)
+    //     box-shadow 0 0 3px .5px rgba($chestnut, .5)
+    //     position relative
+    //     top 1px
+
+    &.invalid,
+    &:disabled,
+    &.disabled
+        cursor default
+        opacity .6
+
+    &:focus
+        outline none
+
+.btn-red,
+.btn-cta
+    @extends _red-gradient
+
+    .no-touch &:hover:not(:disabled):not(.disabled)
+        @extends _red-gradient-hover
+
+/************************
+*****  $SOCIAL  ********
+************************/
+
+// _btnSocial
+//     display inline-block
+//     margin 1em auto
+//     box-sizing border-box
+//     padding em(8) 1em
+
+//     &:before
+//         font-size 1.25em
+
+// .btn-facebook
+//     @extends _fbGradient
+//     @extends _btnSocial
+//     color $white
+
+//     &::before
+//         @extends .icon-facebook:before
+
+//     .active,
+//     &:active
+//         background linear-gradient(-100deg, $fb-blue 0%, $fb-blue-hover 100%)
+
+// .btn-linkedin
+//     @extends _btnSocial
+//     @extends _linkedinGradient
+//     background $linkedin-blue
+//     color $white
+
+//     &::before
+//         @extends .icon-linkedin:before
+
+//     .active,
+//     &:active
+//         background linear-gradient(-100deg, $linkedin-blue-hover 0%, $linkedin-blue 100%)
+
+// .btn-google
+//     @extends _btnSocial
+//     @extends _googleGradient
+//     background $google-red
+//     color $white
+
+//     &::before
+//         @extends .icon-gplus:before
+
+//     .active,
+//     &:active
+//         background linear-gradient(-100deg, $google-red-hover 0%, $google-red 100%)
+
+// .btn-twitter
+//     background $twitter-blue
+//     color $white
+
+//     .no-touch &:hover
+//         background $twitter-blue-hover
