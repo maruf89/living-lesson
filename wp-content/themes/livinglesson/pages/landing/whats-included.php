@@ -16,7 +16,7 @@
                 </h4>
                 <span class="include-descrip">
                     Tailored specifically to<br>
-                    your classtivity.
+                    your <?php echo CLASSTIVITY_NAME; ?>.
                 </span>
             </div>
 

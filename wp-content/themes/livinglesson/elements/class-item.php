@@ -5,7 +5,7 @@
     $image = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), 'classtivity');
 ?>
 
-<a class="class-item has-hover col-xs-12 col-md-6" href="<?php echo get_permalink(); ?>">
+<a class="class-item has-hover col-xs-12 col-md-6" href="<?php echo 'http://www.livinglesson.io/wp-content/uploads/2016/02/Single_Design_2.pdf'; //get_permalink(); ?>">
     <div class="item-wrapper">
         <div
             class="background"

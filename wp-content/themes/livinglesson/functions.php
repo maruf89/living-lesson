@@ -468,4 +468,7 @@ function loop_showcase($category = 'classtivity') {
     wp_reset_query(); // reset the query
 }
 
+define('CLASSTIVITY_NAME', 'live lesson');
+define('CLASSTIVITY_NAME_UPPER', 'Live Lesson');
+
 ?>

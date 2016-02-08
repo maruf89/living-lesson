@@ -22,7 +22,7 @@
             <div class="text-box">
                 <div class="tail left"></div>
                 <div class="tail right"></div>
-                <h3 class="text">Sign up for an Upcoming Classtivity</h3>
+                <h3 class="text">Sign up for an Upcoming <?php echo CLASSTIVITY_NAME_UPPER; ?></h3>
             </div>
         </div>
     </div>
@@ -35,7 +35,7 @@
         <a class="whats-included-link styled-link"
             href="#whatsIncluded"
         >
-            What’s included in a classtivity?
+            What’s included in a <?php echo CLASSTIVITY_NAME; ?>?
         </a>
     </div>
 
