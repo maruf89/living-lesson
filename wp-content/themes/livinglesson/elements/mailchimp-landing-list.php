@@ -1,6 +1,6 @@
 <section class="mailchimp list landing-list">
     <?php
-        global $mailchimp_title;
+        // global $mailchimp_title;
         if (!isset($mailchimp_title)) {
             $mailchimp_title = 'Or enter your email to be notified about new classtivities in your area';
         }
