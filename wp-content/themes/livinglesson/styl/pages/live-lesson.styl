@@ -1,0 +1,113 @@
+.Lesson
+    .lesson-head
+        width 100%
+        position relative
+        
+    .head-bg
+        absolute top left
+        height 100%
+
+    .intro
+        padding em(22.5) 0
+        position relative
+        
+        +media('sm')
+            padding em(45) 0
+
+    /*.intro */.enter
+        background rgba($tan, .7)
+        padding em(40) 0
+        text-align center
+        
+    /*.enter h1*/.lesson-title
+        $font-bold(40)
+        margin-bottom 1em
+        text-shadow 0 0 5px $chestnut
+        color $white
+        
+    /*.enter p*/.lesson-excerpt
+        $font-regular(18, null, 26)
+        color $chestnut
+        margin 0
+        
+        +media('sm')
+            font-size em(22)
+
+    /*.intro */.cta-details
+        background rgba($chestnut, .9)
+        color $white
+        padding em(20) 0
+        text-align center
+        
+    /*.cta-details h4*/.details-head
+        color $tan
+        $font-semi(22)
+        padding-bottom .15em
+        border-bottom 1px solid $tan
+        margin-bottom .5em
+        display inline-block
+        
+    .head-sib/*lings*/
+        +media('sm')
+            width 50%
+        
+    .lesson-details
+        margin-bottom 1.5em
+        
+        +media('sm')
+            float right
+            text-align left
+            margin 0
+            
+    .details-cta
+        +media('sm')
+            float left
+            padding 2em 0
+            
+
+    /*ul*/.details-list
+        line-height 1.5em
+        
+    /*.details-cta a*/.what-happens-link
+        text-decoration underline
+
+
+
+
+    .lesson-body
+        padding em(10) 0 em(20)
+        
+    .lesson-body-head
+        font-size em(18)
+        margin-bottom 1em
+        
+    /*.lesson-body */.lesson-activity
+        margin-bottom 3em
+        
+        +media('md')
+            margin-bottom 1.25em
+        
+            &.even
+                [class*="activity-wrap"]
+                    float right
+                    text-align right
+
+    .activity-img
+        /*span*/.img
+            padding-bottom 75%
+            
+    /*h4*/.activity-descrip
+        $font-bold(20)
+        color $chestnut
+        margin-bottom em(10, 20)
+        
+    /*p*/.activity-copy
+        $font-regular(15, null, 22)
+        
+    .activity-wrap-txt
+        padding-top 1em
+        
+        +media('md')
+            padding-top 3.25em
+
+

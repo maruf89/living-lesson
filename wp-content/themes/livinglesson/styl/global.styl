@@ -1,4 +1,105 @@
 html
     font-size unit($root-font-size, px)
     color $chestnut
+
+img
+    color $white
+
+button
+    border none
     
+input,
+textarea
+    font-size 1em
+    box-shadow none
+
+::-webkit-input-placeholder /* WebKit browsers */
+    font italic 1em $font-italic-val
+
+:-moz-placeholder  /* Mozilla Firefox 4 to 18 */
+    font italic 1em $font-italic-val
+
+::-moz-placeholder /* Mozilla Firefox 19+ */
+    font italic 1em $font-italic-val
+
+:-ms-input-placeholder /* Internet Explorer 10+ */
+    font italic 1em $font-italic-val
+
+iframe
+    max-width 100%
+
+a
+    text-decoration none
+    text-decoration inherit    
+
+/*------------------------------------*\
+    $MISC
+\*------------------------------------*/
+
+::selection
+  background #04A4CC
+  color #FFF
+  text-shadow none
+
+::-webkit-selection
+  background #04A4CC
+  color #FFF
+  text-shadow none
+
+::-moz-selection
+  background #04A4CC
+  color #FFF
+  text-shadow none
+
+::-webkit-input-placeholder
+  color gray
+
+:-moz-placeholder
+  color gray
+  
+::-moz-placeholder
+  color gray
+
+:-ms-input-placeholder
+  color gray
+
+// Fuck you Avast
+.aos.aos-overlay
+    display none !important
+    z-index -1 !important
+
+//////////////////////////
+/////  $RETINA IMG   /////
+//////////////////////////
+.non-retina-block
+    display block !important
+
+.non-retina-inline-block
+    display inline-block !important
+
+.non-retina-inline
+    display inline !important
+
+.retina-block,
+.retina-inline-block,
+.retina-inline
+    display none !important
+
+
+//retina images + desktop
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (-moz-min-device-pixel-ratio: 2),
+only screen and (min-device-pixel-ratio : 2)
+    .non-retina-block,
+    .non-retina-inline-block,
+    .non-retina-inline
+        display none !important
+
+    .retina-block
+        display block !important
+
+    .retina-inline-block
+        display inline-block !important
+
+    .retina-inline
+        display inline !important

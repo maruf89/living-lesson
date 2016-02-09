@@ -1,11 +1,8 @@
 <?php
-    $custom_fields = get_post_custom();
-    $fields = array('venueName', 'shortAddress');
-
     $image = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), 'classtivity');
 ?>
 
-<a class="class-item has-hover col-xs-12 col-md-6" href="<?php echo 'http://www.livinglesson.io/wp-content/uploads/2016/02/Single_Design_2.pdf'; //get_permalink(); ?>">
+<a class="class-item has-hover col-xs-12 col-md-6" href="<?php the_permalink(); ?>">
     <div class="item-wrapper">
         <div
             class="background"
@@ -16,7 +13,7 @@
 
         <div class="spots-left">
             <span class="spots-bar">
-                <span class="number"><?php echo $custom_fields['spotsLeft'][0]; ?></span>
+                <span class="number"><?php the_field('spaces-remaining'); ?></span>
                 <span class="text">spots left!</span>
             </span>
         </div>
@@ -29,16 +26,16 @@
                 <ul class="class-stats">
                     <li class="class-stat venue-name">
                         <span class="strong">@</span>
-                        <strong><?php echo $custom_fields['venueName'][0]; ?></strong>
+                        <strong><?php the_field('venue-name'); ?></strong>
                     </li>
                     <li class="class-stat short-address">
-                        <em><?php echo $custom_fields['shortAddress'][0]; ?></em>
+                        <em><?php the_field('location-general'); ?></em>
                     </li>
                     <li class="class-stat language-level">
-                        <?php echo $custom_fields['languageLevel'][0]; ?>
+                        <?php the_field('language-level'); ?>
                     </li>
                     <li class="class-stat price">
-                        <?php echo $custom_fields['price'][0]; ?>
+                        <?php the_field('price'); ?>
                     </li>
                 </ul>
             </div>

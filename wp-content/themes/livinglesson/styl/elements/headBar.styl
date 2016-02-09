@@ -3,12 +3,15 @@
     $height = 50
     $tail-size = $height / 2
     
-    width unit((620 / $max-width) * 100, '%')
+    width 100%
     margin-left auto
     margin-right auto
     position relative
     text-align center
     font-size em($font-size)
+    
+    +media('sm')
+        width unit((620 / $max-width) * 100, '%')
     
     &:after
         content ''
@@ -76,6 +79,19 @@
         .right:after,
         .left:after
             border-top-color $brown-desat
+        
+    &.bar-brown
+        &:after,
+        .text-box
+            background $brown-light
+            
+        .right:before,
+        .left:before
+            border-bottom-color $brown-light
+            
+        .right:after,
+        .left:after
+            border-top-color $brown-light
             
 
         

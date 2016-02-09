@@ -1,7 +1,6 @@
 <?php
 /*
- *  Author: Todd Motto | @toddmotto
- *  URL: html5blank.com | @html5blank
+ *  Author: Marius Miliunas
  *  Custom functions, support, custom post types and more.
  */
 
@@ -27,10 +26,15 @@ if (function_exists('add_theme_support'))
 
     // Add Thumbnail Theme Support
     add_theme_support('post-thumbnails');
-    add_image_size('large', 700, '', true); // Large Thumbnail
-    add_image_size('medium', 250, '', true); // Medium Thumbnail
+    add_image_size('default', 700, '', true); // Large Thumbnail
     add_image_size('small', 120, '', true); // Small Thumbnail
     add_image_size('classtivity', 350, 200, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
+    add_image_size('livelesson-head-xs', 400, 500, true);
+    add_image_size('livelesson-head-sm', 800, 500, true);
+    add_image_size('livelesson-head-md', 1200, 600, true);
+    add_image_size('livelesson-head-lg', 1920, 600, true);
+    add_image_size('livelesson-content-lg', 352, 264, true);
+
 
     // Add Support for Custom Backgrounds - Uncomment below if you're going to use
     /*add_theme_support('custom-background', array(
@@ -468,7 +472,31 @@ function loop_showcase($category = 'classtivity') {
     wp_reset_query(); // reset the query
 }
 
+function responsive_image_inc($attachment_ID, $image_size, $post_ID = null, $class = '') {
+    $sizes = array('xs', 'sm', 'md', 'lg');
+    $image_srcs = array();
+
+    // Load the post thumbnail if no attachment ID is passed
+    if (empty($attachment_ID)) {
+        $attachment_ID = get_post_thumbnail_id($post_ID);
+    }
+
+    foreach ($sizes as $size) {
+        $image_srcs[$size] = wp_get_attachment_image_src($attachment_ID, $image_size . '-' . $size);
+    }
+
+    require('inc/responsive-img.php');
+}
+
 define('CLASSTIVITY_NAME', 'live lesson');
 define('CLASSTIVITY_NAME_UPPER', 'Live Lesson');
+
+function post_thumb_src($size) {
+    return wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID(), $size));
+}
+
+function print_d($variable) {
+    echo '<pre>' . print_r($variable, 1) . '</pre>';
+}
 
 ?>
