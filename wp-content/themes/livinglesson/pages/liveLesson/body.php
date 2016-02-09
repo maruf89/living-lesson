@@ -13,7 +13,7 @@
 
             <section class="lesson-activity row <?php echo $odd_even; ?>">
                 <div class="activity-wrap-img middle-align col-xs-12 col-sm-6 col-md-4">
-                    <?php responsive_image_inc(get_field('activity-'.$i.'-img'), 'livelesson-content', null, 'activity-img'); ?>
+                    <?php responsive_image_inc(get_field('activity_'.$i.'_img'), 'livelesson-content', null, 'activity-img'); ?>
                 </div>
 
                 <div class="activity-wrap-txt middle-align col-xs-12 col-sm-6 col-md-8">
