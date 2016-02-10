@@ -1,8 +1,12 @@
 <section class="mailchimp list landing-list">
     <?php
         // global $mailchimp_title;
-        if (!isset($mailchimp_title)) {
+        if (empty($mailchimp_title)) {
             $mailchimp_title = 'Or enter your email to be notified about new classtivities in your area';
+        }
+
+        if (empty($mailchimp_ga_label)) {
+            $mailchimp_ga_label = 'Get Updates';
         }
     ?>
     <!-- Begin MailChimp Signup Form -->
@@ -38,7 +42,12 @@
                     value="Get Updates!"
                     name="subscribe"
                     id="mc-embedded-subscribe"
-                    class="submit middle-align btn-cta fat" />
+                    class="submit middle-align btn-cta fat"
+                    data-ga-bind="submit"
+                    data-ga-category="acquisition"
+                    data-ga-action="submit"
+                    data-ga-label="<?php echo $mailchimp_ga_label; ?>"
+                    />
                 <div id="mce-responses" class="clear">
                     <div class="response" id="mce-error-response" style="display:none"></div>
                     <div class="response" id="mce-success-response" style="display:none"></div>

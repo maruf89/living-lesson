@@ -34,6 +34,10 @@
     <div class="whats-include-text">
         <a class="whats-included-link styled-link"
             href="#whatsIncluded"
+            data-ga-bind="click"
+            data-ga-category="learn more"
+            data-ga-action="click"
+            data-ga-label="landing: whats included"
         >
             What’s included in a <?php echo CLASSTIVITY_NAME; ?>?
         </a>
@@ -44,7 +48,10 @@
     </div>
 
     <div class="email-signup col-md-8 col-center">
-        <?php get_template_part('elements/mailchimp-landing-list'); ?>
+        <?php
+            $mailchimp_ga_label = 'landing: top: get updates';
+            include(locate_template('elements/mailchimp-landing-list.php'));
+        ?>
     </div>
 </section>
 <!-- End Top CTA -->

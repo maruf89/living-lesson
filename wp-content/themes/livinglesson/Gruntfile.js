@@ -7,13 +7,42 @@ module.exports = function(grunt) {
   return grunt.initConfig({
     config: {
       assets: 'img/',
-      _javascript: 'js/',
-      _js: 'js/src/',
+      _javascript: 'js',
       _css: './',
       _stylus: 'styl',
       _root: '../../../',
       _plugins: '../../plugins/',
       pkg: 'package.json'
+    },
+    babel: {
+      options: {
+        sourceMap: false,
+      },
+      dev: {
+        files: {
+          "main.js": "<%= config._javascript %>/concated.js"
+        }
+      },
+      production: {
+        options: {
+          sourceMap: true,
+        },
+        files: {
+          "<%= config._javascript %>/concated.js": "<%= config._javascript %>/concated.js"
+        }
+      }
+    },
+    concat: {
+      options: {
+        separator: ';',
+      },
+      production: {
+        src: [
+          '<%= config._javascript %>/git/jQuery-Google-Analytics/jquery.googleanalytics.js',
+          '<%= config._javascript %>/main.js',
+        ],
+        dest: '<%= config._javascript %>/concated.js',
+      },
     },
     stylus: {
       options: {
@@ -34,15 +63,15 @@ module.exports = function(grunt) {
     },
     uglify: {
       production: {
-        src: 'js/main.js',
-        dest: 'js/main.min.js',
+        src: '<%= config._javascript %>/concated.js',
+        dest: 'main.js',
         options: {
           sourceMappingURL: function(dest) {
             console.log(dest);
             return dest + ".map";
           },
           sourceMapPrefix: 3,
-          sourceMap: 'js/main.min.js.map',
+          sourceMap: 'main.js.map',
           compress: true,
           mangle: true
         }
@@ -53,10 +82,28 @@ module.exports = function(grunt) {
         files: ["<%= config._stylus %>/**/*.styl"],
         tasks: ['stylus']
       },
-      // js: {
-      //   files: ["<%= config._js %>*.js"],
-      //   tasks: ['uglify:production']
-      // }
+      js: {
+        files: [
+          "!<%= config._javascript %>/concated.js",
+          "!<%= config._javascript %>/*.min.js",
+          "<%= config._javascript %>/**/*.js",
+        ],
+        tasks: ['concat', 'babel:dev']
+      }
     }
-  }, grunt.registerTask('default', ['stylus', 'watch']));
+  },
+
+  grunt.registerTask('default', [
+    'stylus',
+    'concat:production',
+    'babel:dev',
+    'watch'
+  ]),
+
+  grunt.registerTask('production', [
+    'stylus',
+    'concat:production',
+    'babel:production',
+    'uglify:production',
+  ]));
 };

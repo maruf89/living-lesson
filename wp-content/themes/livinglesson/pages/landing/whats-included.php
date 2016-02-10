@@ -66,6 +66,7 @@
 
     <div class="email-signup col-md-8 col-center">
         <?php
+            $mailchimp_ga_label = 'landing: bot: get updates';
             $mailchimp_title = 'Have your own ideas of where you’d like a class be held? <a href="mailto:mvmiliunas@gmail.com" class="styled-link" target=_blank>Email me</a> personally or sign up to get updated.';
             include(locate_template('elements/mailchimp-landing-list.php'));
         ?>

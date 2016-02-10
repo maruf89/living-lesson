@@ -3,6 +3,8 @@
     $(function () {
         
         'use strict';
+
+        console.log('loaded');
         
         // DOM ready, take it away
         

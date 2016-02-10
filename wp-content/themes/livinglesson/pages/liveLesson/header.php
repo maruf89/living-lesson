@@ -31,8 +31,21 @@
                 </div>
 
                 <div class="details-cta head-sib">
-                    <a class="btn-cta fluffy">Reserve my Spot!</a>
-                    <a class="block what-happens-link"><em>What happens when I reserve?</em></a>
+                    <a
+                        class="btn-cta fluffy"
+                        data-ga-bind="click"
+                        data-ga-category="acquisition"
+                        data-ga-action="click"
+                        data-ga-label="lesson: <?php the_title(); ?>: cta"
+                    >Reserve my Spot!</a>
+                    <a
+                        class="block what-happens-link"
+                        style="cursor:pointer"
+                        data-ga-bind="click"
+                        data-ga-category="learn more"
+                        data-ga-action="click"
+                        data-ga-label="lesson: what happens when i reserve"
+                    ><em>What happens when I reserve?</em></a>
                 </div>
             </div>
         </div>
