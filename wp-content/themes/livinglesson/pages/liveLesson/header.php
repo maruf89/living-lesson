@@ -32,6 +32,8 @@
 
                 <div class="details-cta head-sib">
                     <a
+                        href="https://docs.google.com/forms/d/1ZRqIMsYB2e3wowFo995RH70Jse6peKlO4v3j1NQ_s_s/viewform"
+                        target="_blank"
                         class="btn-cta fluffy"
                         data-ga-bind="click"
                         data-ga-category="acquisition"
@@ -45,7 +47,7 @@
                         data-ga-category="learn more"
                         data-ga-action="click"
                         data-ga-label="lesson: what happens when i reserve"
-                    ><em>What happens when I reserve?</em></a>
+                    ><em>What happens when I reserve? (Coming Soon)</em></a>
                 </div>
             </div>
         </div>
