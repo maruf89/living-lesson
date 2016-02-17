@@ -15,6 +15,12 @@
     .medallion
         display inline-block
         vertical-align sub
+        
+    .head-cta
+        +media('xs')
+            width 100vw
+            margin-left -15px
+            font-size .9em
 
 .site-title
     color $white
@@ -27,21 +33,28 @@
     $font-regular(20)
     width em(515)
     max-width 100%
-    margin 0 auto em(55, 20)
+    margin 0 auto em(25, 20)
     text-shadow 0 0 2px $white
     
+    +media('sm')
+        margin-bottom em(55, 20)
+    
 .Landing
+    $sec-pad-bot = 50
     ////////// $Classes
     .sec
-        padding em(10) 0 em(50)
+        padding em(10) 0 em($sec-pad-bot)
 
     .sec-head
-        margin-bottom em(30, 18)
         font-size em(18)
+        margin-bottom 1em
 
     ////////// $Structure
     .top-section
-        margin-bottom em(70)
+        margin-bottom em(40)
+        
+        +media('sm')
+            margin-bottom em(70)
         
     .whats-include-text
         margin-bottom em($default-padding)
@@ -55,128 +68,86 @@
         margin-bottom em(10)
         
     ///////// $WHAT IS IT
-    /*section*/.what-is-it
-        background $tan
+    $explico-padding = 2
+    
+    .what-is-it
+        padding 0
         
-    /*section*/.whats-included
+        .sec-head
+            position relative
+            top 1em
+            margin 0
+            left 50%
+            transform translateX(-50%)
+        
+    [class^="explico-"]
+        padding unit($explico-padding, 'em') em(5)
+
+        +media('xs')
+            text-align center
+            
+        +media('sm')
+            padding unit($explico-padding * 1.75, 'em')
+    
+    .explico-1
         background rgba($tan, .3)
+        padding-top unit($explico-padding + 1, 'em')
+            
+        +media('sm')
+            padding unit(($explico-padding * 1.75) + 1, 'em')
         
-    /*.whats-included */.point
-        text-align center
+    .explico-2
+        background rgba($tan, .6)
         
-    .icon-img-row
-        position relative
-        margin-bottom em(30)
+        +media('sm')
+            .icon
+                float right
         
+    .explico-3
+        background rgba($tan, .9)
+        padding-bottom em($sec-pad-bot)
+        
+
+    /*h3*/.what-is-title
+        color $brown-light
+        $font-bold(20)
+        margin-bottom .75em
+        
+    /*p*/.what-is-text
+        color $black
+        $font-regular(16)
+        
+
     /*.point img*/.icon-img
         display inline-block
         
-    $what-is-bar-bg = #FDE4BA
-    $what-is-left = #FDECCF
-    $what-is-right = #E1BD92
-    /*.whats-included */.what-is-bars
-        background $what-is-bar-bg
-        position relative
+    //////// $LANDING FORM
+    /*p*/.form-descrip
+        padding 1em
         
-        &:before,
-        &:after
-            content ''
-            absolute top
-            height 100%
-            width 25%
-            display block
-            
-        &:before
-            left 0
-            background $what-is-left
-            
-        &:after
-            right 0
-            background $what-is-right
-            
-    .connector
-        display inline-block
-        position absolute
-        top 50%
-        transform translateY(-50%)
-        color $brown-desat
-        $font-semi(20)
-        
-        &.plus
-            left 32%
-            font-size em(30)
-            
-        &.at
-            left 64%
-            
-    /*.container*/.what-container
-        position relative
-        z-index 1
-        overflow hidden
-        
-    .what-is-bar
-        $height = 96
-        $tail-size = $height / 2
-    
-        padding em(20) 0
-        text-align center
-        $font-bold(18)
-        
-        &.bar-left
-            background $what-is-left
-            padding-left 7%
-            
-        &.bar-middle
-            position relative
-            
-            &:before,
-            &:after
-                font-size 15px
-                position absolute
-                content ''
-                width 0
-                height 0
-                border solid transparent
-                pointer-events none
-                border-width em($height)
-                margin-top - em($height)
-
-            &:before
-                border-left-color $what-is-left
-                left 0
-                top 0
-                
-            &:after
-                border-right-color $what-is-right
-                right 0
-                top 100%
-            
-        &.bar-right
-            background $what-is-right
-            padding-right 7%
             
     //////// $WHAT'S INCLUDED
-    .includes-row
-        margin-bottom em(70)
+    // .includes-row
+    //     margin-bottom em(70)
             
-    /*include */.include-copy
-        margin-bottom em(25)
-        text-align center
+    // /*include */.include-copy
+    //     margin-bottom em(25)
+    //     text-align center
         
-    /*.include-copy h4*/.include-head
-        $font-bold(18)
-        color $brown-light
+    // /*.include-copy h4*/.include-head
+    //     $font-bold(18)
+    //     color $brown-light
 
-    /*.include-copy span*/.include-descrip
-        color $chestnut
-        $font-italic(16)
+    // .include-copy span.include-descrip
+    //     color $chestnut
+    //     $font-italic(16)
 
-    .img-include
-        border 3px solid $tan
-        max-width em(232)
-        margin 0 auto
+    // .img-include
+    //     border 3px solid $tan
+    //     max-width em(232)
+    //     margin 0 auto
         
-        img
-            width 100%
-            height auto
+    //     img
+    //         width 100%
+    //         height auto
 

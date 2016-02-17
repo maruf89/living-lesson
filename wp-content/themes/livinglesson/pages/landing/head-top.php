@@ -14,7 +14,7 @@
             <img
                 src="<?php echo get_template_directory_uri(); ?>/img/landing/medallion.svg"
                 alt="Only in Medellin"
-                class="medallion"
+                class="medallion hidden-xs"
                 />
         </div>
 

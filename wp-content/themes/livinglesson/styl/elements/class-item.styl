@@ -4,6 +4,12 @@
     text-decoration none
     box-sizing border-box
     
+    +media('xs')
+        margin-bottom 1em
+
+        &:last-child
+            margin-bottom 0
+    
     .item-wrapper
         border 1px solid $maroon
         height 100%

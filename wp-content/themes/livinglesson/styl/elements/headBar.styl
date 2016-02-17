@@ -28,7 +28,10 @@
         text-align center
         background $chestnut
         display inline-block
-        min-width 75%
+        min-width 85%
+        
+        +media('sm')
+            min-width 75%
         
     .text
         font-size em($font-size, $font-size)

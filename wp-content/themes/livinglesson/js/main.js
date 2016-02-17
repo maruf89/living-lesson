@@ -1,12 +1,9 @@
 (function ($, root, undefined) {
+    'use strict';
     
     $(function () {
-        
-        'use strict';
 
-        console.log('loaded');
         
-        // DOM ready, take it away
         
     });
     

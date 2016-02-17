@@ -3,5 +3,5 @@
 
     <?php get_template_part('pages/landing/what-is-it'); ?>
 
-    <?php get_template_part('pages/landing/whats-included'); ?>
+    <?php get_template_part('pages/landing/form'); ?>
 </div>

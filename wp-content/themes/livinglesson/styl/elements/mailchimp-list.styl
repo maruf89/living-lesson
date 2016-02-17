@@ -8,9 +8,11 @@
 
     .email-input
         @extends .middle-align
-        width 65% !important
-        min-height 0 !important
-        padding 0 !important
+        
+        +media('sm')
+            width 65% !important
+            min-height 0 !important
+            padding 0 !important
         
     .email
         padding em($input-padding) !important
